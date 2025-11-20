@@ -1,0 +1,242 @@
+/* Reset dan Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-image: url('../images/app-preview.png'), url('../images/fallback-bg.svg');
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed, fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Background Overlay */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+/* Hero Container */
+.hero-container {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 30px;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Hero Description */
+.hero-description {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+/* Download Button */
+.download-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff4757 0%, #ff3742 100%);
+    color: white;
+    text-decoration: none;
+    padding: 18px 40px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+    margin-bottom: 40px;
+    border: 2px solid transparent;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 71, 87, 0.6);
+    background: linear-gradient(135deg, #ff3742 0%, #ff2d3a 100%);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.download-btn:active {
+    transform: translateY(-1px);
+}
+
+/* App Details */
+.app-details {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.detail-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 25px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.detail-label {
+    display: block;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 35px;
+        padding: 0 10px;
+    }
+    
+    .download-btn {
+        padding: 16px 35px;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .app-details {
+        gap: 20px;
+        margin-top: 25px;
+    }
+    
+    .detail-item {
+        padding: 12px 20px;
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-container {
+        padding: 30px 15px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+    }
+    
+    .download-btn {
+        padding: 14px 30px;
+        font-size: 0.9rem;
+    }
+    
+    .app-details {
+        flex-direction: column;
+        gap: 15px;
+        max-width: 250px;
+        margin: 25px auto 0;
+    }
+    
+    .detail-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+    }
+    
+    .detail-label,
+    .detail-value {
+        display: inline;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 0.85rem;
+    }
+}
+
+/* Fallback untuk browser yang tidak support backdrop-filter */
+@supports not (backdrop-filter: blur(2px)) {
+    .background-overlay {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .detail-item {
+        background: rgba(0, 0, 0, 0.3);
+    }
+}

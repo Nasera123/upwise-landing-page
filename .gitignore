@@ -32,7 +32,8 @@ Thumbs.db
 *.log
 
 # APK files (uncomment if you don't want to commit APK files)
-# /public/apk/*.apk
+/public/apk/*.apk
+*.zip
 
 # Large image files (uncomment if images are too large)
 # /public/images/*.png
